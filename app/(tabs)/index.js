@@ -1,30 +1,37 @@
 import * as React from "react";
-import {Image, StyleSheet, View, Pressable, Text} from "react-native";
+import { Image, StyleSheet, View, Pressable, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Link } from 'expo-router';
 
 
-const Home = () => {  
-  
-  	 
-  	return (
-    		<SafeAreaView style={styles.app}>
-      			<Pressable style={styles.appInner} onPress={()=>{}}>
-        				<Image style={[styles.frameChild, styles.iconLayout]} resizeMode="cover" source={require('../../assets/images/tradbanner.png')} />
-      			</Pressable>
-      			<Text style={[styles.traduceSeasA, styles.traduceSeasATypo]}>Traduce señas a texto en tiempo real usando la cámara.</Text>
-      			<Pressable style={styles.wrapper} onPress={()=>{}}>
-        				<Image style={[styles.icon, styles.iconLayout]} resizeMode="cover" source={require('../../assets/images/catbanner.png')} />
-      			</Pressable>
-      			<Text style={[styles.exploraNuestrasFunciones, styles.traduceSeasATypo]}>Explora nuestras funciones  para mejorar la comunicación en lenguaje de señas.</Text>
-      			<Text style={[styles.heyBienvenidoUsuario, styles.Tittle]}>Hey!, Bienvenido usuario</Text>
-      			<Text style={[styles.traductorDeLsm, styles.Tittle]}>Traductor de LSM</Text>
-      			<Text style={[styles.catlogoRespuestas, styles.intrpreteVirtualTypo]}>{`Catálogo Respuestas  `}</Text>
-      			<Text style={[styles.accedeAUna, styles.accedeAUnaTypo]}>Accede a una base de datos inteligente con respuestas rápidas.</Text>
-      			<Pressable style={styles.container} onPress={()=>{}}>
-        				<Image style={[styles.icon, styles.iconLayout]} resizeMode="cover" source={require('../../assets/images/interbanner.png')} />
-      			</Pressable>
-      			<Text style={[styles.intrpreteVirtual, styles.intrpreteVirtualTypo]}>Intérprete virtual</Text>
-      			<Text style={[styles.convierteTextoO, styles.accedeAUnaTypo]}>{`Convierte texto en señas con un intérprete virtual.`}</Text>
+const Home = () => {
+
+
+    return (
+        <SafeAreaView style={styles.app}>
+            <Link href="/traductor" asChild>
+                <Pressable style={styles.appInner} onPress={() => { }}>
+                    <Image style={[styles.frameChild, styles.iconLayout]} resizeMode="cover" source={require('../../assets/images/tradbanner.png')} />
+                </Pressable>
+            </Link>
+            <Text style={[styles.traduceSeasA, styles.traduceSeasATypo]}>Traduce señas a texto en tiempo real usando la cámara.</Text>
+            <Link href="/respuestas" asChild>
+                <Pressable style={styles.wrapper} onPress={() => { }}>
+                    <Image style={[styles.icon, styles.iconLayout]} resizeMode="cover" source={require('../../assets/images/catbanner.png')} />
+                </Pressable>
+            </Link>
+            <Text style={[styles.exploraNuestrasFunciones, styles.traduceSeasATypo]}>Explora nuestras funciones  para mejorar la comunicación en lenguaje de señas.</Text>
+            <Text style={[styles.heyBienvenidoUsuario, styles.Tittle]}>Hey!, Bienvenido usuario</Text>
+            <Text style={[styles.traductorDeLsm, styles.Tittle]}>Traductor de LSM</Text>
+            <Text style={[styles.catlogoRespuestas, styles.intrpreteVirtualTypo]}>{`Catálogo Respuestas  `}</Text>
+            <Text style={[styles.accedeAUna, styles.accedeAUnaTypo]}>Accede a una base de datos inteligente con respuestas rápidas.</Text>
+            <Link href="/interprete" asChild>
+                <Pressable style={styles.container} onPress={() => { }}>
+                    <Image style={[styles.icon, styles.iconLayout]} resizeMode="cover" source={require('../../assets/images/interbanner.png')} />
+                </Pressable>
+            </Link>
+            <Text style={[styles.intrpreteVirtual, styles.intrpreteVirtualTypo]}>Intérprete virtual</Text>
+            <Text style={[styles.convierteTextoO, styles.accedeAUnaTypo]}>{`Convierte texto en señas con un intérprete virtual.`}</Text>
             <Image style={styles.messageIcon} resizeMode="cover" source={require('../../assets/images/message.png')} />
             <Image style={styles.undrawDrinkCoffeeV3au1Icon} resizeMode="cover" source={require('../../assets/images/boy.png')} />
             <Image style={styles.undrawSharingKnowledge03vpIcon} resizeMode="cover" source={require('../../assets/images/woman.png')} />
@@ -32,9 +39,9 @@ const Home = () => {
             <Image style={[styles.interpreteIcon, styles.appChildLayout]} resizeMode="cover" source={require('../../assets/images/interprete.png')} />
         </SafeAreaView>);
 };
- 
+
 const styles = StyleSheet.create({
-    iconLayout: {      
+    iconLayout: {
         opacity: 0.85,
         borderRadius: 25
     },
@@ -75,7 +82,7 @@ const styles = StyleSheet.create({
         overflow: "hidden"
     },
     frameChild: {
-        width: 800 ,
+        width: 800,
         height: 350
     },
     appInner: {
@@ -184,8 +191,8 @@ const styles = StyleSheet.create({
         position: "absolute",
         overflow: "hidden",
         borderWidth: 1.5,           // Ancho del borde
-        borderColor: '#BAD6EB', 
-        borderRadius: 50, 
+        borderColor: '#BAD6EB',
+        borderRadius: 50,
     },
     undrawSharingKnowledge03vpIcon: {
         top: 850,
